@@ -1,2 +1,6 @@
-package org.example;public class Cliente {
+package org.example;
+
+public class Cliente {
+    private int id;
+    private String cedula;
 }
