@@ -7,24 +7,21 @@ public class Cliente extends Usuario{
 
     @Override
     public void consultarServicios(){
+        System.out.println("a");
 
     }
 
-    public ServicioTaxi solicitarTaxi(){
+   // public ServicioTaxi solicitarTaxi(){
 
-    }
+    //}
 
-    public ServicioEncomienda solicitarEncomienda(){
+    //public ServicioEncomienda solicitarEncomienda(){
 
-    }
+    //}
 
-    public ArrayList<PagoServicio> pagoServicio(){
+    //public ArrayList<PagoServicio> pagoServicio(){
 
-    }
+    //}
 
 
-public class Cliente {
-    private int id;
-    private String cedula;
-    private String hola;    
 }

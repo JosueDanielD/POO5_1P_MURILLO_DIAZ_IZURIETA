@@ -7,8 +7,9 @@ public class ServicioEncomienda {
     private TipoEncomienda tipoEncomienda;
 
 
-    @Override
-    public double calcularCosto(){
+    //@Override
+    //public double calcularCosto(){
 
-    }
+
+    //}
 }
