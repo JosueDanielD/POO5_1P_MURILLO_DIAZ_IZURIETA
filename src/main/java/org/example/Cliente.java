@@ -51,7 +51,11 @@ public class Cliente extends Usuario {
       System.out.println("----------------------");
      }
 
-
+    /**
+    * Este metodo solicita una encomienda por parte del cliente
+    * @param  listaUsuarios lista requerida para obtener la instancia PagoServicio.
+    * @return PagoServicio Devuelve una instancia PagoServicio.
+    **/
      public PagoServicio solicitarTaxi(ArrayList<Usuario> listaUsuarios){
     
          Scanner sc = new Scanner(System.in);
@@ -113,7 +117,13 @@ public class Cliente extends Usuario {
          
         
     }
-
+     
+     
+    /**
+     * Este metodo solicita una encomienda por parte del cliente
+     * @param listaUsusarios lista requerida para obtener la instancia PagoServicio.
+     * @return PagoServicio Devuelve una instancia PagoServicio.
+     **/
     public PagoServicio solicitarEncomienda(ArrayList<Usuario> listaUsuarios){
         Scanner sc = new Scanner(System.in);
         Random rd = new Random();
@@ -179,6 +189,12 @@ public class Cliente extends Usuario {
          }
          
     }
+    
+    /**
+     * Este metodo solicita una encomienda por parte del cliente
+     * @param  PagoServicio instancia requerida para ser agregada a la lista.
+     * @param  listaPagoServicio Lista requerida para que se agrege la instancia.
+     **/
     public void ActualizacionPagoServicio(PagoServicio PagoServicio,ArrayList<PagoServicio> listaPagoServicio){
         listaPagoServicio.add(PagoServicio); 
     }
