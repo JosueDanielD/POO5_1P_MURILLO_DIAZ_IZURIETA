@@ -28,7 +28,9 @@ public class Usuario {
     public Usuario(){
     }
 
-
+    /**
+     *@param listaServicios Este metodo sera sobrescrito en sus hijas.
+     **/
     //(em)MÉTODOS USUARIO
     public void consultarServicios(ArrayList<Servicio> listaServicios){
     }
