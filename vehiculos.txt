@@ -1,0 +1,1 @@
+codigoVehiculo,placa,modelo,marca,tipo
