@@ -12,7 +12,7 @@ public class Servicio {
 
     }
 
-    public double calcularCosto(){
+    protected double calcularCosto(){
         return 0.00;
     }
 
