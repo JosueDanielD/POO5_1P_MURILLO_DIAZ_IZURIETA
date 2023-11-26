@@ -39,4 +39,9 @@ public class Vehiculo {
     public void settipoVehiculo(TipoVehiculo tipoVehiculo){
         this.tipoVehiculo = tipoVehiculo;
     }
+    
+    
+    public String toString(){
+        return (this.getplaca() + this.getmarca() +this.getmodelo() +this.gettipoVehiculo());
+    }
 }
