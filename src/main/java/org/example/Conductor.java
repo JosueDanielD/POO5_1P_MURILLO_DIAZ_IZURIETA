@@ -38,6 +38,12 @@ public class Conductor extends Usuario{
     }
     
     //(em)Metodo consultarServicio sobrescrito
+    
+    /**
+     * Este metodo consulta los servicios de conductor
+     * @param listaServicios lista requerida para realizar el print necesario.
+     **/
+    
     @Override
     public void consultarServicios(ArrayList<Servicio> listaServicios){
         System.out.println("Estos son los servicios que se le ha Asignado: ");
@@ -50,6 +56,10 @@ public class Conductor extends Usuario{
     }
     
     //(em)Metodo consultar su vehiculo
+    
+    /**
+     * Este metodo consulta el vehiculo del conductor.
+     **/
     public void ConsultarVehiculo(){
         System.out.println(this.getVehiculo());
     }
