@@ -1,6 +1,7 @@
 package org.example;
 import java.util.Scanner;
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Cliente extends Usuario {
     
@@ -40,7 +41,7 @@ public class Cliente extends Usuario {
     
     //(em)se sobrescribe el metodo consultar servicios para el cliente
     @Override
-    public void consultarServicios(){
+    public void consultarServicios(ArrayList<Servicio> listaServicios){
       System.out.println("Estos son los servicios que ha solicitado: ");
       
       for (Servicio a: listaServicios){
@@ -51,7 +52,7 @@ public class Cliente extends Usuario {
      }
 
 
-     public void solicitarTaxi(){
+     public PagoServicio solicitarTaxi(ArrayList<Usuario> listaUsuarios){
     
          Scanner sc = new Scanner(System.in);
          Random rd = new Random();
@@ -93,30 +94,94 @@ public class Cliente extends Usuario {
          for(Usuario a: listaUsuarios){
              if (a instanceof Conductor){
                  Conductor b = (Conductor)a;
-                 if(b.getEstadoConductor()== EstadoConductor.valueOf("D")){
+                 if(b.getEstadoConductor()== EstadoConductor.valueOf("D")&& b.getVehiculo().gettipoVehiculo() == TipoVehiculo.valueOf("AUTO")){
                      conductor = b;
                      break;
                  }
                  
              }
          }
-         
+         sc.close();
          if (confirmacion == "SI"){
-             ServicioTaxi nuevoServicio=new ServicioTaxi(origen,fin,fecha,conductor,identificador,hora,cantidad,TipoServicio.valueOf("T"));
+             ServicioTaxi nuevoServicioTaxi =new ServicioTaxi(origen,fin,fecha,conductor,identificador,hora,cantidad,TipoServicio.valueOf("T"));
+             PagoServicio nuevoPagoServicio = new PagoServicio(nuevoServicioTaxi, fecha, metodo, identificador, this, costoViaje);
+             return nuevoPagoServicio;
          }
          else{
-         
+             return null;
          }
+         
         
     }
 
-    //public ServicioEncomienda solicitarEncomienda(){
-
-    //}
-
-    //public ArrayList<PagoServicio> pagoServicio(){
-
-    //}
+    public PagoServicio solicitarEncomienda(ArrayList<Usuario> listaUsuarios){
+        Scanner sc = new Scanner(System.in);
+        Random rd = new Random();
+        
+        System.out.println("Usted esta solicitando un taxi");
+        System.out.print("Ingrese la ubicacion de INICIO de la ruta: \n");
+        String origen = sc.nextLine();
+        sc.nextLine();
+        System.out.print("Ingrese la ubicacion de FIN de la ruta: \n");
+        String fin = sc.nextLine();
+        sc.nextLine();
+        System.out.print("Ingrese la fecha del viaje: \n");
+        String fecha = sc.nextLine();
+        sc.nextLine();
+        System.out.print("Ingrese la hora del viaje: \n");
+        String hora = sc.nextLine();
+        sc.nextLine();
+        System.out.println("Ingrese el metodo de pago");
+        System.out.print("si es CREDITO escriba C o TARJETA DE CREDITO escriba TC: \n");
+        String elMetodo = sc.nextLine();
+        MetodoPago metodo = MetodoPago.valueOf(elMetodo);
+        sc.nextLine();
+        System.out.println("Ingrese el tipo de encomienda");
+        System.out.print("Las opciones son MEDICINA/DOCUMENTOS/ROPA: \n");
+        String tipoEnco = sc.nextLine();
+        TipoEncomienda encomienda = TipoEncomienda.valueOf(tipoEnco);
+        sc.nextLine();
+        System.out.print("Ingrese la cantidad de productos: \n");
+        int cantidad = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Ingrese el peso en KG de los productos: \n");
+        double peso = sc.nextDouble();
+        sc.nextLine();
+        
+        double calculo = (cantidad * 1)+4;
+        
+        int identificador=rd.nextInt(100,10000);
+        
+        System.out.print("Desea confirmar su entrega? SI/NO: \n");
+        String confirmacion = sc.nextLine();
+        sc.nextLine();
+        
+        Conductor conductor;
+        for(Usuario a: listaUsuarios){
+            if (a instanceof Conductor){
+                Conductor b = (Conductor)a;
+                if(b.getEstadoConductor()== EstadoConductor.valueOf("D")&& b.getVehiculo().gettipoVehiculo() == TipoVehiculo.valueOf("MOTO")){
+                    
+                    conductor = b;
+                    break;
+                }
+                 
+            }
+        }
+        sc.close();
+        if (confirmacion == "SI"){
+             ServicioEncomienda nuevoServicioEnco=new ServicioEncomienda(origen,fin,fecha,conductor,identificador,hora,cantidad,peso,TipoServicio.valueOf("E"),encomienda));
+             PagoServicio nuevoPagoServicio = new PagoServicio(nuevoServicioEnco, fecha, metodo, identificador, this, calculo);
+             return nuevoPagoServicio; 
+        }
+         else{
+            return null;
+         }
+         
+    }
+    public void ActualizacionPagoServicio(PagoServicio PagoServicio,ArrayList<PagoServicio> listaPagoServicio){
+        listaPagoServicio.add(PagoServicio); 
+    }
 
 }
 

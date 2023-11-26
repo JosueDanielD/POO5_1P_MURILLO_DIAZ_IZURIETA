@@ -1,4 +1,5 @@
 package org.example;
+import java.util.ArrayList;
 
 public class Usuario {
 
@@ -29,7 +30,7 @@ public class Usuario {
 
 
     //(em)MÉTODOS USUARIO
-    public void consultarServicios(){
+    public void consultarServicios(ArrayList<Servicio> listaServicios){
     }
 
     
