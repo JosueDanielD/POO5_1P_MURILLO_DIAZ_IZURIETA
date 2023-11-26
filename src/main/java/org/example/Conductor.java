@@ -1,4 +1,5 @@
 package org.example;
+import java.util.ArrayList;
 
 //(em)Clase Conductor es Hija de Usuario
 public class Conductor extends Usuario{
@@ -38,17 +39,19 @@ public class Conductor extends Usuario{
     
     //(em)Metodo consultarServicio sobrescrito
     @Override
-    public void consultarServicios(){
+    public void consultarServicios(ArrayList<Servicio> listaServicios){
         System.out.println("Estos son los servicios que se le ha Asignado: ");
-
         
-        System.out.println("Estos son los servicios que ha solicitado: ");
-
         for (Servicio a: listaServicios){
           System.out.println(a);
         }
       
         System.out.println("----------------------");
+    }
+    
+    //(em)Metodo consultar su vehiculo
+    public void ConsultarVehiculo(){
+        System.out.println(this.getVehiculo());
     }
 }
 
