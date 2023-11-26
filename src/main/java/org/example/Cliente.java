@@ -24,4 +24,12 @@ public class Cliente extends Usuario{
     //}
 
 
+<<<<<<< HEAD
+=======
+public class Cliente {
+    private int id;
+    private String cedula;
+    private String hola;    
+    private String messi;
+>>>>>>> 79cbbfbb79e79c31bf841dd921914feb46291a60
 }
