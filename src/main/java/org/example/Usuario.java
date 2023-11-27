@@ -1,7 +1,7 @@
 package org.example;
 import java.util.ArrayList;
 
-public class Usuario {
+public abstract class Usuario {
 
     //(em)ATRIBUTOS CLASE USUARIO
     protected String nombre;
@@ -32,8 +32,8 @@ public class Usuario {
      *@param listaServicios Este metodo sera sobrescrito en sus hijas.
      **/
     //(em)MÉTODOS USUARIO
-    public void consultarServicios(ArrayList<Servicio> listaServicios){
-    }
+    public  abstract void consultarServicios(ArrayList<Servicio> listaServicios);
+    
 
     
 

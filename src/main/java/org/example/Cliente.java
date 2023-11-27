@@ -40,6 +40,10 @@ public class Cliente extends Usuario {
     }
     
     //(em)se sobrescribe el metodo consultar servicios para el cliente
+    /**
+     * Este metodo solicita una encomienda por parte del cliente
+     * @param  listaServicios Se requiere la listaServicios para imprimir sus elementos.
+     **/
     @Override
     public void consultarServicios(ArrayList<Servicio> listaServicios){
       System.out.println("Estos son los servicios que ha solicitado: ");
@@ -93,7 +97,7 @@ public class Cliente extends Usuario {
          
          int identificador=rd.nextInt(100,10000);
          
-         Conductor conductor;
+         Conductor conductor = null;
          
          for(Usuario a: listaUsuarios){
              if (a instanceof Conductor){
@@ -166,7 +170,7 @@ public class Cliente extends Usuario {
         String confirmacion = sc.nextLine();
         sc.nextLine();
         
-        Conductor conductor;
+        Conductor conductor = null;
         for(Usuario a: listaUsuarios){
             if (a instanceof Conductor){
                 Conductor b = (Conductor)a;
@@ -180,7 +184,7 @@ public class Cliente extends Usuario {
         }
         sc.close();
         if (confirmacion == "SI"){
-             ServicioEncomienda nuevoServicioEnco=new ServicioEncomienda(origen,fin,fecha,conductor,identificador,hora,cantidad,peso,TipoServicio.valueOf("E"),encomienda));
+             ServicioEncomienda nuevoServicioEnco=new ServicioEncomienda(origen,fin,fecha,conductor,identificador,hora,cantidad,peso,TipoServicio.valueOf("E"),encomienda);
              PagoServicio nuevoPagoServicio = new PagoServicio(nuevoServicioEnco, fecha, metodo, identificador, this, calculo);
              return nuevoPagoServicio; 
         }

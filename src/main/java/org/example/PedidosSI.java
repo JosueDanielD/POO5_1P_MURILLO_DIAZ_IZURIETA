@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class PedidosSI {
 
     //(jd)ATRIBUTOS CLASE PRINCIPAL PEDIDOSSI
-    //ArrayList<Usuario> listaUsuarios;
-    //ArrayList<Vehiculo> listaVehiculos;
-    //ArrayList<Servicio> listaServicios;
+    ArrayList<Usuario> listaUsuarios;
+    ArrayList<Vehiculo> listaVehiculos;
+    ArrayList<Servicio> listaServicios;
 
 
     //(jd)METODO PRINCIPAL:
@@ -70,7 +70,12 @@ public class PedidosSI {
     //public void iniciarSesion(Usuario user){
     //}
 
-
+    /**
+    * Este metodo valida el usuario
+    * @param  user String con el user para logear e identifica el tipo de cliente.
+    * @param contrasenia String con la contraseña para logear e identifica el tipo de cliente.
+    * @return boolean se obtiene un booleano para saber si existe o no el usuario.
+    **/
     public static boolean validarUsuario(String user,String contrasenia){ //SI ES DE TIPO CLIENTE VA A RETORNAR TRUE
         Scanner sc=new Scanner (System.in);
         ArrayList<String> listaUsuarios = ManejoArchivos.leerArchivo("usuarios.txt");

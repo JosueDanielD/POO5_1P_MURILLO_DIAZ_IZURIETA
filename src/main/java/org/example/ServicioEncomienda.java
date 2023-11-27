@@ -7,13 +7,17 @@ public class ServicioEncomienda extends Servicio{
     private double peso;
     private TipoServicio tipoServicio;
     private TipoEncomienda tipoEncomienda;
-
-
-    @Override
-    public double calcularCosto(){
-        double costoEncomienda=this.cantidadProductos+4;
-        return costoEncomienda;
-
-
+    
+    public ServicioEncomienda(String origen,String destino,String fecha, Conductor conductor,int identificadorServicio,String hora,
+            int cantidadProductos,
+            double peso,
+            TipoServicio tipoServicio,
+            TipoEncomienda tipoEncomienda){
+        super(origen,destino,fecha,conductor,identificadorServicio,hora);
+        this.cantidadProductos = cantidadProductos;
+        this.peso = peso;
+        this.tipoServicio = tipoServicio;
+        this.tipoEncomienda = tipoEncomienda;
     }
+
 }

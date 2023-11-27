@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 public class ManejoArchivos {
     //IMPLIMENTAR MÉTODO QUE CREE UN ARCHIVO DE TEXTO:
-
+    
+    /**
+    * Este metodo crea un archivo
+    * @param  nombreArchivo nombre del archivo para crearlo.
+    **/
     public static void crearArchivo(String nombreArchivo){
         File archivo= new File(nombreArchivo);
         try{
@@ -18,7 +22,13 @@ public class ManejoArchivos {
     }
 
     //IMPLEMENTAR MÉTODO QUE ESCRIBA EN UN ARCHIVO:
-
+    
+    /**
+    * Este metodo escribe en un archivo
+    * @param  nombreArchivo String con el nombre del archivo para escribir.
+    * @param  contenido String con el contenido para escribir.
+    * @return PagoServicio Devuelve una instancia PagoServicio.
+    **/
     public static void escribirArchivo(String nombreArchivo, String contenido){
         File archivo= new File(nombreArchivo); //para verificar si el archivo existe.
         try{
@@ -40,7 +50,13 @@ public class ManejoArchivos {
 
 
     //AHORA UN MÉTODO PARA LEER ARCHIVOS:
-
+    
+    /**
+    * Este metodo escribe en un archivo
+    * @param  nombreArchivo String con el nombre del archivo para escribir necesario para retornar eun arreglo.
+    * @return ArrayList<String> arreglo que contiene la linea del archivo como Strings.
+    **/
+    
     public static ArrayList<String> leerArchivo(String nombreArchivo){
         File archivo= new File(nombreArchivo); //para verificar si el archivo existe.
         ArrayList<String> lecturaArchivo=new ArrayList<String>();
