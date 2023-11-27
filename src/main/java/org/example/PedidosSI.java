@@ -23,26 +23,42 @@ public class PedidosSI {
             System.out.println("*************MENÚ*****************");
             System.out.println("                                  ");
             System.out.println("1. Solicitar servicio de taxi");
-            System.out.println("2. Solicitar comida a domicilio");
-            System.out.println("3. Solicitar entrega encomienda");
-            System.out.println("4. Consultar servicios");
+            System.out.println("2. Solicitar entrega encomienda");
+            System.out.println("3. Consultar servicios");
             System.out.println(" ");
             System.out.println("Elija una opción: ");
             int opcionElegida= sc.nextInt();
             switch(opcionElegida){
                 case 1:
-
+                    cliente.solicitarTaxi(listaServicios);
                     break;
                 case 2:
+                    cliente.solicitarEncomienda(listaUsuarios);
 
                     break;
                 case 3:
-
-                    break;
-                case 4:
+                    cliente.consultarServicios(listaServicios);
 
                     break;
             }
+        }
+        else{
+            System.out.println("*************MENÚ*****************");
+            System.out.println("                                  ");
+            System.out.println("1. Consultar servicio asignado");
+            System.out.println("2. Datos de su vehículo");
+            System.out.println(" ");
+            System.out.println("Elija una opción: ");
+            int opcionElegida= sc.nextInt();
+            switch(opcionElegida) {
+                case 1:
+                    conductor.consultarServicios(listaServicios);
+                    break;
+                case 2:
+                    conductor.ConsultarVehiculo();
+
+                    break;
+            }        
         }
 
 
