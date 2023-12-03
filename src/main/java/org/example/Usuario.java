@@ -29,10 +29,10 @@ public abstract class Usuario {
     }
 
     /**
-     *@param listaServicios Este metodo sera sobrescrito en sus hijas.
+     *Este metodo sera sobrescrito en sus hijas.
      **/
     //(em)MÉTODOS USUARIO
-    public  abstract void consultarServicios(ArrayList<Servicio> listaServicios);
+    public  abstract boolean consultarServicios(ArrayList<String> listaServicios);
     
 
     

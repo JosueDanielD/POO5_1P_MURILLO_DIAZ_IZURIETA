@@ -42,6 +42,6 @@ public class Vehiculo {
     
     
     public String toString(){
-        return (this.getplaca() + this.getmarca() +this.getmodelo() +this.gettipoVehiculo());
+        return ("Placa: "+this.getplaca() +"\nMarca: "+ this.getmarca()+"\nModelo: " +this.getmodelo()+"\nTipo de Vehículo: " +this.gettipoVehiculo());
     }
 }
