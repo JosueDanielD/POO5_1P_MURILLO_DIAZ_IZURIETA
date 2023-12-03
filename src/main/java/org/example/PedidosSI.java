@@ -63,6 +63,47 @@ public class PedidosSI {
         ArrayList<String> listaVehiculos = ManejoArchivos.leerArchivo("vehiculos.txt");
         Scanner sc = new Scanner(System.in);
 
+        //eliminar lineas vacias del arraylist listaUsuarios
+        String[] infoUsuarioPorBorrar;
+        for (int i=0;i<listaUsuarios.size();i++){
+            infoUsuarioPorBorrar=listaUsuarios.get(i).split(",");
+            if(infoUsuarioPorBorrar.length==1){
+                listaUsuarios.remove(i);
+            }
+        }
+
+        //eliminar lineas vacias del arraylist listaClientes
+        String[] infoClientePorBorrar;
+        for (int i=0;i<listaClientes.size();i++){
+            infoClientePorBorrar=listaClientes.get(i).split(",");
+            if(infoClientePorBorrar.length==1){
+                listaClientes.remove(i);
+            }
+        }
+
+        //eliminar lineas vacias del arraylist listaConductores
+        String[] infoConductorPorBorrar;
+        for (int i=0;i<listaConductores.size();i++){
+            infoConductorPorBorrar=listaConductores.get(i).split(",");
+            if(infoConductorPorBorrar.length==1){
+                listaConductores.remove(i);
+            }
+        }
+
+        //eliminar lineas vacias del arraylist listaVehiculos
+        String[] infoVehiculoPorBorrar;
+        for (int i=0;i<listaVehiculos.size();i++){
+            infoVehiculoPorBorrar=listaVehiculos.get(i).split(",");
+            if(infoVehiculoPorBorrar.length==1){
+                listaVehiculos.remove(i);
+            }
+        }
+
+
+
+
+
+
         //CASO 1: EL USUARIO ES CLIENTE Y ESTÁ TANTO EN USUARIOS.TXT COMO EN CLIENTES.TXT
         //CASO 2: EL USUARIO ES CLIENTE Y ESTÁ SOLO EN USUARIOS.TXT
         //CASO 3: EL USUARIO ES CONDUCTOR Y ESTÁ TANTO EN USUARIOS.TXT COMO EN CONDUCTORES.TXT
@@ -448,6 +489,26 @@ public class PedidosSI {
         ArrayList<String> listaServicios=ManejoArchivos.leerArchivo("servicios.txt");
         ArrayList<String> listaUsuarios=ManejoArchivos.leerArchivo("usuarios.txt");
         Scanner sc=new Scanner(System.in);
+
+        //eliminar lineas vacias del arraylist listaUsuarios
+        String[] infoUsuarioPorBorrar;
+        for (int i=0;i<listaUsuarios.size();i++){
+            infoUsuarioPorBorrar=listaUsuarios.get(i).split(",");
+            if(infoUsuarioPorBorrar.length==1){
+                listaUsuarios.remove(i);
+            }
+        }
+
+        //eliminar lineas vacias del arraylist listaServicios
+        String[] infoServicioPorBorrar;
+        for (int i=0;i<listaServicios.size();i++){
+            infoServicioPorBorrar=listaServicios.get(i).split(",");
+            if(infoServicioPorBorrar.length==1){
+                listaServicios.remove(i);
+            }
+        }
+
+
         System.out.println("***********MENÚ************\n*                            *\n****************************\n");
         System.out.println("1. Solicitar servicio de taxi.\n2.Solicitar entrega de encomienda. \n3. Consultar servicios\n" +
                 "4. Salir del Menú\nElija una opción: ");
@@ -505,6 +566,27 @@ public class PedidosSI {
 
         ArrayList<String> listaServicios=ManejoArchivos.leerArchivo("servicios.txt");
         ArrayList<String> listaUsuarios=ManejoArchivos.leerArchivo("usuarios.txt");
+        //eliminar lineas vacias del arraylist listaUsuarios
+        String[] infoUsuarioPorBorrar;
+        for (int i=0;i<listaUsuarios.size();i++){
+            infoUsuarioPorBorrar=listaUsuarios.get(i).split(",");
+            if(infoUsuarioPorBorrar.length==1){
+                listaUsuarios.remove(i);
+            }
+        }
+
+        //eliminar lineas vacias del arraylist listaServicios
+        String[] infoServicioPorBorrar;
+        for (int i=0;i<listaServicios.size();i++){
+            infoServicioPorBorrar=listaServicios.get(i).split(",");
+            if(infoServicioPorBorrar.length==1){
+                listaServicios.remove(i);
+            }
+        }
+
+
+
+
         Scanner sc=new Scanner(System.in);
         System.out.println("***********MENÚ************\n*                            *\n****************************\n");
         System.out.println("1. Consultar Servicio Asignado.\n2. Consultar datos de vehículo.\n3. Salir del Menú\nElija una opción: ");

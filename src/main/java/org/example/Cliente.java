@@ -174,6 +174,15 @@ public class Cliente extends Usuario {
         //PERO NO SE AGREGAN HASTA EL FINAL PORQUE UNA VEZ MOSTRADO EL SUBTOTAL HAY QUE PREGUNTARLE AL USUARIO SI
         //DESEA CONFIRMAR EL VIAJE O NO. SI NO LO CONFIRMA, SE LE MUESTRA OTRA VEZ EL MENÚ INICIAL
 
+        //eliminar lineas vacias del arraylist listaUsuarios
+        String[] infoUsuarioPorBorrar;
+        for (int i=0;i<listaUsuarios.size();i++){
+            infoUsuarioPorBorrar=listaUsuarios.get(i).split(",");
+            if(infoUsuarioPorBorrar.length==1){
+                listaUsuarios.remove(i);
+            }
+        }
+
         Scanner sc = new Scanner(System.in);
         Random rd = new Random();
 
@@ -216,11 +225,40 @@ public class Cliente extends Usuario {
 
 
         ArrayList<String> listaServicios=ManejoArchivos.leerArchivo("servicios.txt");
+        //eliminar lineas vacias del arraylist listaServicios
+        String[] infoServicioPorBorrar;
+        for (int i=0;i<listaServicios.size();i++){
+            infoServicioPorBorrar=listaServicios.get(i).split(",");
+            if(infoServicioPorBorrar.length==1){
+                listaServicios.remove(i);
+            }
+        }
+
         String numeroServicio=String.valueOf(listaServicios.size());
         ArrayList<Servicio> Servicios;
 
         ArrayList<String> listaConductores = ManejoArchivos.leerArchivo("conductores.txt");
+        //eliminar lineas vacias del arraylist listaServicios
+        String[] infoConductorPorBorrar;
+        for (int i=0;i<listaConductores.size();i++){
+            infoConductorPorBorrar=listaConductores.get(i).split(",");
+            if(infoConductorPorBorrar.length==1){
+                listaConductores.remove(i);
+            }
+        }
+
         ArrayList<String> listaPagos=ManejoArchivos.leerArchivo("pagos.txt");
+
+        //eliminar lineas vacias del arraylist listaPagos
+        String[] infoPagosPorBorrar;
+        for (int i=0;i<listaPagos.size();i++){
+            infoPagosPorBorrar=listaPagos.get(i).split(",");
+            if(infoPagosPorBorrar.length==1){
+                listaPagos.remove(i);
+            }
+        }
+
+
 
 
 
@@ -300,6 +338,15 @@ public class Cliente extends Usuario {
     public boolean consultarServicios(ArrayList<String> listaServicios){
 
         listaServicios.remove(0);
+
+        //eliminar lineas vacias del arraylist listaServicios
+        String[] infoServicioPorBorrar;
+        for (int i=0;i<listaServicios.size();i++){
+            infoServicioPorBorrar=listaServicios.get(i).split(",");
+            if(infoServicioPorBorrar.length==1){
+                listaServicios.remove(i);
+            }
+        }
 
         ArrayList<Servicio> listaDeServicios=new ArrayList<>();
         String[] infoServicios;

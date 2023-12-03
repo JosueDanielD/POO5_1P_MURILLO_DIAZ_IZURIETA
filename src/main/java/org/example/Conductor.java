@@ -53,6 +53,14 @@ public class Conductor extends Usuario {
     public boolean consultarServicios(ArrayList<String> listaServicios) {
 
         listaServicios.remove(0);
+        //eliminar lineas vacias del arraylist listaServicios
+        String[] infoServicioPorBorrar;
+        for (int i=0;i<listaServicios.size();i++){
+            infoServicioPorBorrar=listaServicios.get(i).split(",");
+            if(infoServicioPorBorrar.length==1){
+                listaServicios.remove(i);
+            }
+        }
 
         ArrayList<Servicio> listaDeServicios = new ArrayList<>();
         String[] infoServicios;

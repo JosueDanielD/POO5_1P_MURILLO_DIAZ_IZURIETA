@@ -31,6 +31,25 @@ public class Servicio {
     public void mostrarInformacion(){
         ArrayList<String> listaViajes= ManejoArchivos.leerArchivo("viajes.txt");
         ArrayList<String> listaEncomiendas= ManejoArchivos.leerArchivo("encomiendas.txt");
+
+        //eliminar lineas vacias del arraylist listaViajes
+        String[] infoViajePorBorrar;
+        for (int i=0;i<listaViajes.size();i++){
+            infoViajePorBorrar=listaViajes.get(i).split(",");
+            if(infoViajePorBorrar.length==1){
+                listaViajes.remove(i);
+            }
+        }
+        //eliminar lineas vacias del arraylist listaEncomiendas
+        String[] infoEncomiendaPorBorrar;
+        for (int i=0;i<listaEncomiendas.size();i++){
+            infoEncomiendaPorBorrar=listaEncomiendas.get(i).split(",");
+            if(infoEncomiendaPorBorrar.length==1){
+                listaEncomiendas.remove(i);
+            }
+        }
+
+
         String tipoDeServicio;
         String cantidadPasajeros="0";
         String cantidadProductos="0";
