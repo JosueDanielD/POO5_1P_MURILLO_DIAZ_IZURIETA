@@ -1,1 +1,8 @@
 cedula,nombre,apellido,user,contraseña,celular,tipoUsuario
+0932053077,Josue,Diaz,josdbaqu,123,0994879370,R
+
+0932053085,Juan,Pérez,jperezchofer,125,0992293731,R
+
+0998754986,Joffre,Páez,jpaez,127,0998795622,R
+
+099895687,Josue,Baque,jbaque,555,0992426666,C

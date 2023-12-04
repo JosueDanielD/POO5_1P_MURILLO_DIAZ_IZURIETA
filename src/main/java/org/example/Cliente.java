@@ -53,6 +53,15 @@ public class Cliente extends Usuario {
     **/
      public double solicitarTaxi(ArrayList<String> listaUsuarios){
 
+         //eliminar lineas vacias del arraylist listaUsuarios
+         String[] infoUsuarioPorBorrar;
+         for (int i=0;i<listaUsuarios.size();i++){
+             infoUsuarioPorBorrar=listaUsuarios.get(i).split(",");
+             if(infoUsuarioPorBorrar.length==1){
+                 listaUsuarios.remove(i);
+             }
+         }
+
          //EN ESTE PRÓXIMO BLOQUE SE PIDEN TODOS LOS DATOS TANTO PARA AGREGAR A SERVICIOS.TXT COMO A VIAJES.TXT
          //PERO NO SE AGREGAN HASTA EL FINAL PORQUE UNA VEZ MOSTRADO EL SUBTOTAL HAY QUE PREGUNTARLE AL USUARIO SI
          //DESEA CONFIRMAR EL VIAJE O NO. SI NO LO CONFIRMA, SE LE MUESTRA OTRA VEZ EL MENÚ INICIAL
@@ -102,6 +111,36 @@ public class Cliente extends Usuario {
          ArrayList<String> listaConductores = ManejoArchivos.leerArchivo("conductores.txt");
          ArrayList<String> listaPagos=ManejoArchivos.leerArchivo("pagos.txt");
 
+         //eliminar lineas vacias del arraylist listaConductores
+         String[] infoConductorPorBorrar;
+         for (int i=0;i<listaConductores.size();i++){
+             infoConductorPorBorrar=listaConductores.get(i).split(",");
+             if(infoConductorPorBorrar.length==1){
+                 listaConductores.remove(i);
+             }
+         }
+
+         //eliminar lineas vacias del arraylist listaServicios
+         String[] infoServicioPorBorrar;
+         for (int i=0;i<listaServicios.size();i++){
+             infoServicioPorBorrar=listaServicios.get(i).split(",");
+             if(infoServicioPorBorrar.length==1){
+                 listaServicios.remove(i);
+             }
+         }
+
+         //eliminar lineas vacias del arraylist listaPagos
+         String[] infoPagoPorBorrar;
+         for (int i=0;i<listaPagos.size();i++){
+             infoPagoPorBorrar=listaPagos.get(i).split(",");
+             if(infoPagoPorBorrar.length==1){
+                 listaPagos.remove(i);
+             }
+         }
+
+
+
+
 
          String nombreConductor="Sin info"; //TERMINANDO EL WHILE QUEDA EL NOMBRE DEL CONDUCTOR QUE HARÁ EL SERVICIOTAXI
          String codigoVehiculoPrevio;
@@ -110,6 +149,15 @@ public class Cliente extends Usuario {
          String[] infoConductor=conductor.split(",");
          int numeroAleatorio;
          ArrayList<String> listaVehiculos=ManejoArchivos.leerArchivo("vehiculos.txt");
+         //Borrando Líneas vacías de Vehículos
+         String[] infoVehiculoPorBorrar;
+         for (int i=0;i<listaVehiculos.size();i++){
+             infoVehiculoPorBorrar=listaVehiculos.get(i).split(",");
+             if(infoVehiculoPorBorrar.length==1){
+                 listaVehiculos.remove(i);
+             }
+         }
+
          while(nombreConductor.equals("Sin info")) {
                  numeroAleatorio=rd.nextInt(1,listaConductores.size()-1);
                  conductor=listaConductores.get(numeroAleatorio);
@@ -238,7 +286,7 @@ public class Cliente extends Usuario {
         ArrayList<Servicio> Servicios;
 
         ArrayList<String> listaConductores = ManejoArchivos.leerArchivo("conductores.txt");
-        //eliminar lineas vacias del arraylist listaServicios
+        //eliminar lineas vacias del arraylist listaConductores
         String[] infoConductorPorBorrar;
         for (int i=0;i<listaConductores.size();i++){
             infoConductorPorBorrar=listaConductores.get(i).split(",");
@@ -269,6 +317,15 @@ public class Cliente extends Usuario {
         String[] infoConductor=conductor.split(",");
         int numeroAleatorio;
         ArrayList<String> listaVehiculos=ManejoArchivos.leerArchivo("vehiculos.txt");
+        //Borrando Líneas vacías de Vehículos
+        String[] infoVehiculoPorBorrar;
+        for (int i=0;i<listaVehiculos.size();i++){
+            infoVehiculoPorBorrar=listaVehiculos.get(i).split(",");
+            if(infoVehiculoPorBorrar.length==1){
+                listaVehiculos.remove(i);
+            }
+        }
+
         while(nombreConductor.equals("Sin info")) {
             numeroAleatorio=rd.nextInt(1,listaConductores.size()-1);
             conductor=listaConductores.get(numeroAleatorio);

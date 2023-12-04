@@ -1,1 +1,8 @@
 codigoVehiculo,placa,modelo,marca,tipo
+1,PIA731,Allegro,Mazda,AUTO
+
+2,GSR5123,BFTwister,Honda,MOTO
+
+3,GSR5218,Bf125,Honda,MOTO
+
+4,JBA6617,Cerato,Kia,AUTO
